@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.5rem;
+}
+
+body {
+  @apply bg-white text-github-text;
+}
+
+* {
+  @apply border-github-border;
+}
+
+.hover-state:hover {
+  @apply bg-github-bg-secondary transition-colors;
+}
+
+.focus-ring:focus-visible {
+  @apply ring-2 ring-github-green ring-offset-2;
+}
