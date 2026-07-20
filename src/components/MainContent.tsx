@@ -3,6 +3,7 @@ import { Upload, Download, Filter } from 'lucide-react'
 import Tabs from '@/components/Tabs'
 import DataTable from '@/components/DataTable'
 import Charts from '@/components/Charts'
+import DashboardStats from '@/components/DashboardStats'
 
 const sampleData = [
   { id: 1, name: 'Q1 Report', date: '2024-03-31', status: 'Completed', value: 45000 },
@@ -20,27 +21,30 @@ export default function MainContent() {
         {/* Header Section */}
         <div className="flex justify-between items-start md:items-center gap-4 flex-wrap">
           <div>
-            <h2 className="text-3xl font-bold text-primer-fg-default">Reports Dashboard</h2>
-            <p className="text-primer-fg-muted mt-2">Manage and track your reports</p>
+            <h2 className="text-3xl font-bold text-primer-fg-default">🎨 Dashboard</h2>
+            <p className="text-primer-fg-muted mt-2">Primer UI Components</p>
           </div>
           <div className="flex gap-3 flex-wrap">
-            <button className="primer-button-primary">
-              <Upload size={18} /> Upload Report
+            <button className="primer-button-primary flex items-center gap-2">
+              <Upload size={18} /> Upload
             </button>
-            <button className="primer-button-secondary">
+            <button className="primer-button-secondary flex items-center gap-2">
               <Download size={18} /> Export
             </button>
-            <button className="primer-button-secondary">
+            <button className="primer-button-secondary flex items-center gap-2">
               <Filter size={18} /> Filter
             </button>
           </div>
         </div>
 
+        {/* Stats Cards */}
+        <DashboardStats />
+
         {/* Tabs */}
         <Tabs activeTab={activeTab} onTabChange={setActiveTab} />
 
         {/* Content */}
-        <div className="bg-primer-bg-default border border-primer-border-default rounded-lg p-6 shadow-sm">
+        <div className="bg-primer-bg-default border border-primer-border-default rounded-lg p-6">
           {activeTab === 'review' ? (
             <DataTable data={sampleData} />
           ) : (
